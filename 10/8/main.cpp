@@ -1,0 +1,6 @@
+#include "Detach.h"
+int main()
+{
+	Output::Demo();						//µ÷ÓÃº¯Êý
+	return 0;
+}
