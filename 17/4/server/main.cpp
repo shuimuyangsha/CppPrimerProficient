@@ -1,8 +1,9 @@
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include "winsock2.h"
 #pragma comment (lib,"ws2_32.lib")
 
+using namespace std;
 
 DWORD WINAPI threadpro(LPVOID pParam)
 {
@@ -32,7 +33,7 @@ DWORD WINAPI threadpro(LPVOID pParam)
 			cout << "From：" << buffer << endl;//接收信息			
 	}
 }
-void main()
+int main()
 {
 	WSADATA wsd;	//定义WSADATA对象
 	WSAStartup(MAKEWORD(2,2),&wsd);
@@ -59,4 +60,5 @@ void main()
 		int ii=sendto(m_SockTo,buffer,1024,0,(sockaddr*)&addrTo,sizeof(addrTo));
 		cout << ii << endl;
 	}
+	return 0;
 }
