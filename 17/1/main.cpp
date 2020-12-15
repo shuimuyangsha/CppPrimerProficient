@@ -1,8 +1,10 @@
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include "winsock2.h"
 
 #pragma comment (lib,"ws2_32.lib")	
+
+using namespace std;
 
 DWORD WINAPI threadpro(LPVOID pParam) 
 {
@@ -50,7 +52,7 @@ DWORD WINAPI threadpro(LPVOID pParam)
 	return 0;
 }
 
-void main()
+int main()
 {
 	WSADATA wsd;									
 	WSAStartup(MAKEWORD(2,2),&wsd);
@@ -61,7 +63,7 @@ void main()
 
 	serveraddr.sin_family = AF_INET;					
 	serveraddr.sin_port = htons(4600);				
-	serveraddr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	serveraddr.sin_addr.S_un.S_addr = inet_addr("192.168.3.3");
 	
 	m_SockServer = socket ( AF_INET,SOCK_STREAM,  0);
 	
@@ -95,4 +97,5 @@ void main()
 			}
 	}
 	WSACleanup();
+	return 0;
 }
