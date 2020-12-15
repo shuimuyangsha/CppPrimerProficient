@@ -63,7 +63,7 @@ int main()
 
 	serveraddr.sin_family = AF_INET;					
 	serveraddr.sin_port = htons(4600);				
-	serveraddr.sin_addr.S_un.S_addr = inet_addr("192.168.3.3");
+	serveraddr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
 	
 	m_SockServer = socket ( AF_INET,SOCK_STREAM,  0);
 	

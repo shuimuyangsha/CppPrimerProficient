@@ -1,9 +1,10 @@
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include "winsock2.h"	
 #include <time.h>		
 #pragma comment (lib,"ws2_32.lib")	
 
+using namespace std;
 void main()
 {
 	
